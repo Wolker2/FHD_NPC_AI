@@ -1,0 +1,10 @@
+{
+  "version": "2.2.5",
+  "base_version": "2.1.9",
+  "dll_sha256": "6d94f9063b83929001a2c97de84267bf85da42ad166b9932aaaf96c3f6b9bf42",
+  "target_exe_sha256": "e43a4b15503c705eebe2d8ce5778c2a2fb090db515a3fd86d319e5c5aa692ebf",
+  "native_x86_suites_passed": 5,
+  "python_test_files_passed": 33,
+  "python_test_cases_passed": 237,
+  "v225_forminfo_and_selective_claims_verified": true
+}

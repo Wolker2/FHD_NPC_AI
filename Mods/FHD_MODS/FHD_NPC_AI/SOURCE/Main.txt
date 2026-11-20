@@ -1,0 +1,37 @@
+Data ~{
+    ScriptLibs ~{
+        FHDNPCNative ~{
+            Path=Mods\FHD_MODS\FHD_NPC_AI\Native\FHD_NPC_AI.dll
+            FHDNPC_Init=int,FHDNPC_Init
+            FHDNPC_OnStart=int,FHDNPC_OnStart
+            FHDNPC_OnLoad=int,FHDNPC_OnLoad
+            FHDNPC_OnSaveProbe=int,FHDNPC_OnSaveProbe
+            FHDNPC_ObserverStatus=int,FHDNPC_ObserverStatus
+        }
+        FHD_NPC_AI=FHDNPCNative
+    }
+}
+BV ~{
+    OnStart ~{
+        FHD_NPC_AI ~{
+            00=unknown init=ImportedFunction('FHDNPCNative','FHDNPC_Init');
+            01=unknown start=ImportedFunction('FHDNPCNative','FHDNPC_OnStart');
+            02=init();
+            03=start();
+        }
+    }
+    OnLoad ~{
+        FHD_NPC_AI ~{
+            00=unknown init=ImportedFunction('FHDNPCNative','FHDNPC_Init');
+            01=unknown loaded=ImportedFunction('FHDNPCNative','FHDNPC_OnLoad');
+            02=init();
+            03=loaded();
+        }
+    }
+    OnSave ~{
+        FHD_NPC_AI ~{
+            00=unknown sample=ImportedFunction('FHDNPCNative','FHDNPC_OnSaveProbe');
+            01=sample();
+        }
+    }
+}
